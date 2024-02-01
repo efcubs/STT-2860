@@ -1,0 +1,143 @@
+---
+title: "Worksheet: Introduction to Vectors"
+subtitle: "STT 2860 Intro to Data Management & Visualization" 
+author: "Ethan Farrell"
+date: "`r format(Sys.time(), '%A, %B %d, %Y @ %I:%M %p')`"
+output: 
+  html_document: 
+    theme: yeti
+    highlight: textmate
+    toc: true
+    toc_depth: 4 
+---
+
+```{r globaloptions, include = FALSE}
+knitr::opts_chunk$set(
+  message = FALSE,
+  warning = FALSE,
+  comment = NA
+)
+```
+
+------------------------------------------------------------------------
+
+-   [Dr. Thomley's Introduction to Vectors slides](https://stat-jet-asu.github.io/Slides/STT2860/IntroVectors.html)
+-   [Dr. Thomley's Patterned Vectors slides](https://stat-jet-asu.github.io/Slides/STT2860/PatternedVectors.html)
+
+------------------------------------------------------------------------
+
+### Packages Used
+
+```{r packagesused}
+# load all packages used here
+
+```
+
+### Using the `c()` Function
+
+using the typeof() functiion you can see what type of vector you have.
+
+#### logical vector
+
+```{r}
+logicalvector <- c(TRUE, TRUE, FALSE, TRUE)
+```
+
+#### numeric vector
+
+```{r}
+numericvector <- c(10, 2, 78, 5, 16)
+```
+
+#### character vector
+
+```{r}
+charectervector <- c("Alex", "Drew", "Jordan", "Riley")
+```
+
+#### mixed vectors
+
+```{r}
+v1 <- c(10, TRUE, 0.5)
+v1
+typeof(v1)
+class(v1)
+```
+```{r}
+v2 <- c("A", 10, TRUE, 0.5)
+typeof(v2)
+class(v2)
+as.numeric(v2)
+```
+### as.numeric(v2) forces the class to be numeric but you will have missing values tha must be replaced
+
+### Using the `:` Function
+
+The : function creates a sequence of values that increments in steps of ±1 from the value on the left side of the : to the value on the right (or as close as it can get).
+Generates sequences by steps of 1 for exam 1:5 1,2,3,4,5
+
+
+#### increasing sequence
+
+```{r}
+
+```
+
+#### decreasing sequence
+
+```{r}
+
+```
+
+#### non-integer sequence
+
+```{r}
+
+```
+
+### Using the `seq()` Function
+
+*erase this and add your own notes*
+
+#### function syntax
+
+```         
+seq(from = 1, to = 1, by = ((to - from)/(length.out - 1)), length.out = NULL, along.with = NULL, ...)
+```
+
+#### using parameter `by =`
+
+```{r}
+s1 <- seq(from = 10, to = 100,by = 10)
+```
+
+#### using parameter `length.out =`
+
+```{r}
+seq(from = 1, to = 51, length.out = 5)
+```
+
+#### using parameter `along.with =`
+
+```{r}
+seq(from = 100, to = 200, along.with = s1)
+```
+
+### Using the `rep`()\` Function
+
+```{r}
+text <- c("BOOM","SHAKA","LAKA")
+rep(text, times = c(1,2,5))
+rep(text, each = 5)
+```
+
+
+length out is making there a set number for the length, 5 variables 5 is the length
+
+along.with makes the length the same as another
+
+------------------------------------------------------------------------
+
+```{r}
+sessionInfo()
+```

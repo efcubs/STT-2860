@@ -1,0 +1,135 @@
+itle: "Worksheet: Introduction to Datasets"
+subtitle: "STT 2860 Intro to Data Mgmt & Visualization" 
+author: "PUT YOUR NAME HERE"
+date: "`r format(Sys.time(), '%A, %B %d, %Y @ %I:%M %p')`"
+output: 
+  html_document: 
+    theme: yeti
+    highlight: textmate
+    toc: true
+    toc_depth: 4 
+---
+
+```{r globaloptions, include = FALSE}
+knitr::opts_chunk$set(
+  message = FALSE,
+  warning = FALSE,
+  comment = NA
+)
+```
+
+***
+
+This worksheet is mean to accompany [Dr. Thomley's Introduction to Datasets slides](https://stat-jet-asu.github.io/Slides/STT2860/IntroToDatasets.html#1).
+
+***
+
+### Packages Used
+
+```{r}
+library(HistData)
+library(tidyverse)
+library(nycflights13)
+```
+
+
+### Datasets in `R`
+
+Use the `data()` function in the Console to see what datasets are available. [This reference](https://rstats101.com/built-in-datasets-in-r/) also explains how this function works. You can find it linked in our Essential Resources on AsULearn.
+
+
+### The `Nightingale` Dataset
+
+Investigate the `Nightingale` dataset from the HistData package.
+
+#### Save the dataset to the Environment
+
+```{r}
+nightingale <- Nightingale
+nightingale$date
+head(nightingale, n = 4) 
+# n is telling r to make 4 rows and the default is 6 and tail gives the bottom six rows.
+```
+
+#### Explore the structure of the dataset
+
+```{r}
+str(nightingale) # shows the values listed in the environment.
+```
+
+
+### The `insertname` dataset
+
+Investigate another dataset from the HistData or other package.
+
+#### Save the dataset to the Environment
+
+```{r}
+attributes(nightingale) 
+names(nightingale) # shows variable names
+dim(nightingale) # dimensions
+```
+
+#### Explore the structure of the dataset
+
+```{r}
+
+```
+
+
+### Build a Dataset from Scratch
+
+#### Create a dataset using `data.frame()` and explore
+
+```{r}
+dataset1 <- data.frame(
+  ID = 1:5,
+  gender = c("male", "male", "female", "female", "nonbinary"),
+  height = c(71, 73, 64, 64, 66),
+  weight = c(175, 225, 130, 125, 165)
+)
+```
+
+#### Create a dataset using `tibble()` and explore
+
+```{r}
+
+```
+
+#### Example containing missing data
+
+```{r}
+
+```
+
+
+### Build a List from Scratch
+
+#### Create a list of vectors using `list()` and explore 
+
+```{r}
+
+```
+
+#### Create a list of datasets using `list()` and explore
+
+```{r}
+
+```
+
+
+***
+```{r}
+sessionInfo()
+```
+The exclimation point ! means "not" in R
+```{r}
+sum(complete.cases(flights))
+sum(!complete.cases(flights))
+```
+
+```{r}
+GN <- data.frame(Times = c(9, 10, 11, 9, 9, 9, 9, 9, 9, 10, 10, 10), Names = c("Jeff", "George", "L", "Q", "W", "E", "R", "T", "Y", "U", "I", "O"))
+GN
+```
+
